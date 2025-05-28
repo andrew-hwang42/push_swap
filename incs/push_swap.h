@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 03:49:16 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/28 03:31:40 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/28 06:53:17 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ int		do_op_rr(t_stack **head);
 void	do_op(char *str, t_stack **a, t_stack **b);
 
 /* sort_stack.c */
+void	reverse_stack_a(t_stack **a, t_stack **b, int size);
 void	sort_3(t_stack **a, t_stack **b);
 void	sort_4(t_stack **a, t_stack **b);
+void	sort_5(t_stack **a, t_stack **b);
 void	sort_stack(t_stack **a, t_stack **b);
 
 /* node_utils.c */
@@ -54,7 +56,6 @@ void	free_stack(t_stack **stack);
 /* sort_utils.c */
 int		stack_is_ascending_order(t_stack *head);
 int		stack_is_descending_order(t_stack *head);
-void	reverse_stack_a(t_stack **a, t_stack **b, int size);
 int		find_min_data(t_stack *head);
 int		find_max_data(t_stack *head);
 

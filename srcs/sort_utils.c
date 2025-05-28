@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 02:10:20 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/28 03:31:27 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/28 06:52:55 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,34 +42,6 @@ int	stack_is_descending_order(t_stack *head)
 		i++;
 	}
 	return (1);
-}
-
-void	reverse_stack_a(t_stack **a, t_stack **b, int size)
-{
-	int	i;
-
-	if (size == 2)
-		do_op("sa", a, b);
-	else if (size == 3)
-	{
-		do_op("sa", a, b);
-		do_op("rra", a, b);
-	}
-	else
-	{
-		i = 0;
-		while (i < size - 1)
-		{
-			do_op("pb", a, b);
-			i++;
-		}
-		while (i > 0)
-		{
-			do_op("pa", a, b);
-			do_op("ra", a, b);
-			i--;
-		}
-	}
 }
 
 int	find_min_data(t_stack *head)
