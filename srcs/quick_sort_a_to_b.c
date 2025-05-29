@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort_1.c                                     :+:      :+:    :+:   */
+/*   quick_sort_a_to_b.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 02:40:21 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 20:06:46 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 21:59:02 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,49 @@ void	rewind_stack(t_stack **a, int size_a, t_stack **b, int size_b)
 	}
 }
 
+void	sort_a_len_4(t_stack **a, t_stack **b)
+{
+	if ((*a)->data > (*a)->next->data)
+		do_op("sa", a, b);
+	do_op("pb", a, b);
+	if ((*a)->data > (*a)->next->data)
+		do_op("sa", a, b);
+	do_op("pb", a, b);
+	if ((*a)->data > (*a)->next->data && (*b)->data < (*b)->next->data)
+		do_op("ss", a, b);
+	else if ((*a)->data > (*a)->next->data)
+		do_op("sa", a, b);
+	else if ((*b)->data < (*b)->next->data)
+		do_op("sb", a, b);
+	do_op("pa", a, b);
+	if ((*a)->data > (*a)->next->data)
+		do_op("sa", a, b);
+	do_op("pa", a, b);
+	if ((*a)->data > (*a)->next->data)
+		do_op("sa", a, b);
+}
+
+void	sort_a(t_stack **a, t_stack **b, int size)
+{
+	if (size == 2 && stack_is_descending_order(*a, size))
+		do_op("sa", a, b);
+	else if (size == 3 && stack_is_descending_order(*a, size))
+	{
+		do_op("ra", a, b);
+		do_op("sa", a, b);
+		do_op("rra", a, b);
+	}
+	else if (!stack_is_ascending_order(*a, size))
+	{
+		if (size == 3)
+			sort_3(a, b);
+		else if (size == 4)
+			sort_a_len_4(a, b);
+		else
+			sort_5(a, b);
+	}
+}
+
 void	classify_a_with_pivot(t_stack **a, t_stack **b, t_data *data, int size)
 {
 	while (size > 0)
@@ -62,51 +105,13 @@ void	classify_a_with_pivot(t_stack **a, t_stack **b, t_data *data, int size)
 	}
 }
 
-void	sort_len_4(t_stack **a, t_stack **b)
-{
-	if ((*a)->data > (*a)->next->data)
-		do_op("sa", a, b);
-	do_op("pb", a, b);
-	if ((*a)->data > (*a)->next->data)
-		do_op("sa", a, b);
-	do_op("pb", a, b);
-	if ((*a)->data > (*a)->next->data && (*b)->data < (*b)->next->data)
-		do_op("ss", a, b);
-	else if ((*a)->data > (*a)->next->data)
-		do_op("sa", a, b);
-	else if ((*b)->data < (*b)->next->data)
-		do_op("sb", a, b);
-	do_op("pa", a, b);
-	if ((*a)->data > (*a)->next->data)
-		do_op("sa", a, b);
-	do_op("pa", a, b);
-	if ((*a)->data > (*a)->next->data)
-		do_op("sa", a, b);
-}
-
 void	sort_a_to_b(t_stack **a, t_stack **b, int size)
 {
 	t_data	data;
 
 	if (size <= 5)
 	{
-		if (size == 2 && stack_is_descending_order(*a, size))
-			do_op("sa", a, b);
-		else if (size == 3 && stack_is_descending_order(*a, size))
-		{
-			do_op("ra", a, b);
-			do_op("sa", a, b);
-			do_op("rra", a, b);
-		}
-		else if (!stack_is_ascending_order(*a, size))
-		{
-			if (size == 3)
-				sort_3(a, b);
-			else if (size == 4)
-				sort_len_4(a, b);
-			else
-				sort_5(a, b);
-		}
+		sort_a(a, b, size);
 		return ;
 	}
 	data.s = 0;
@@ -119,9 +124,4 @@ void	sort_a_to_b(t_stack **a, t_stack **b, int size)
 	sort_a_to_b(a, b, data.l);
 	sort_b_to_a(a, b, data.m);
 	sort_b_to_a(a, b, data.s);
-}
-
-void	quick_sort(t_stack **a, t_stack **b)
-{
-	sort_a_to_b(a, b, get_stack_size(*a));
 }

@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 02:10:20 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 15:59:36 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 21:57:15 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,32 @@ int	find_max_data(t_stack *head, int size)
 		size--;
 	}
 	return (max);
+}
+
+void	reverse_stack_a(t_stack **a, t_stack **b, int size)
+{
+	int	i;
+
+	if (size == 2)
+		do_op("sa", a, b);
+	else if (size == 3)
+	{
+		do_op("sa", a, b);
+		do_op("rra", a, b);
+	}
+	else
+	{
+		i = 0;
+		while (i < size - 1)
+		{
+			do_op("pb", a, b);
+			i++;
+		}
+		while (i > 0)
+		{
+			do_op("pa", a, b);
+			do_op("ra", a, b);
+			i--;
+		}
+	}
 }

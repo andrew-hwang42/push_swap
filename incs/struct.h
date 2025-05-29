@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 03:49:55 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 19:23:37 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 22:03:18 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct s_stack
 {
-	int			data;
+	int				data;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;

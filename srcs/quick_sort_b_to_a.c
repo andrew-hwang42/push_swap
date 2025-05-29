@@ -1,16 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort_2.c                                     :+:      :+:    :+:   */
+/*   quick_sort_b_to_a.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 19:56:55 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 19:57:21 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 21:58:48 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
+
+void	sort_b(t_stack **a, t_stack **b, int size)
+{
+	if (size == 2)
+	{
+		if ((*b)->data < (*b)->next->data)
+			do_op("sb", a, b);
+	}
+	else if (size == 3)
+	{
+		if ((*b)->data < (*b)->next->data)
+			do_op("sb", a, b);
+		if (!stack_is_descending_order(*b, size))
+		{
+			do_op("rb", a, b);
+			do_op("sb", a, b);
+			do_op("rrb", a, b);
+			if ((*b)->data < (*b)->next->data)
+				do_op("sb", a, b);
+		}
+	}
+	while (size--)
+		do_op("pa", a, b);
+}
 
 void	classify_b_with_pivot(t_stack **a, t_stack **b, t_data *data, int size)
 {
@@ -42,25 +66,7 @@ void	sort_b_to_a(t_stack **a, t_stack **b, int size)
 
 	if (size <= 3)
 	{
-		if (size == 2 || size == 3)
-		{
-			if ((*b)->data < (*b)->next->data)
-				do_op("sb", a, b);
-			if (size == 3)
-			{
-				if (!stack_is_descending_order(*b, size))
-				{
-					do_op("rb", a, b);
-					do_op("sb", a, b);
-					do_op("rrb", a, b);
-					if ((*b)->data < (*b)->next->data)
-						do_op("sb", a, b);
-				}
-				do_op("pa", a, b);
-			}
-			do_op("pa", a, b);
-		}
-		do_op("pa", a, b);
+		sort_b(a, b, size);
 		return ;
 	}
 	data.s = 0;

@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 04:52:15 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 14:56:52 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 22:04:53 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_int_range(char *str)
 {
-	int	sign;
+	int		sign;
 	long	nbr;
 
 	sign = 1;
@@ -59,7 +59,7 @@ int	check_duplicate_input(int size, char **argv)
 {
 	int	i;
 	int	j;
-	int	arr[size];
+	int	arr[9999];
 
 	i = 0;
 	while (argv[i])

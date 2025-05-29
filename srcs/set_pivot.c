@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 04:22:39 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 15:21:22 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 22:04:23 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	set_pivot_value(t_data *data, int size, int *arr)
 	}
 }
 
-int	set_pivot(t_stack *stack, t_data *data,  int size)
+int	set_pivot(t_stack *stack, t_data *data, int size)
 {
 	int	*arr;
 

@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 03:49:16 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 20:01:20 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 22:01:52 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include "../libft/incs/ft_printf.h"
 
 /* main.c */
-void	print_stack(t_stack *stack);//
 int		main(int argc, char **argv);
 
 /* check_valid_input.c */
@@ -36,27 +35,29 @@ int		do_op_rr(t_stack **head);
 void	do_op(char *str, t_stack **a, t_stack **b);
 
 /* sort_stack.c */
-void	reverse_stack_a(t_stack **a, t_stack **b, int size);
+
 void	sort_3(t_stack **a, t_stack **b);
 void	sort_4(t_stack **a, t_stack **b);
 void	sort_5(t_stack **a, t_stack **b);
+void	quick_sort(t_stack **a, t_stack **b);
 void	sort_stack(t_stack **a, t_stack **b);
 
 /* set_pivot.c */
 void	set_pivot_idx(t_data *data, int size);
 void	set_pivot_value(t_data *data, int size, int *arr);
-int	set_pivot(t_stack *stack, t_data *data, int size);
+int		set_pivot(t_stack *stack, t_data *data, int size);
 
-/* quick_sort_1.c */
+/* quick_sort_a_to_b.c */
 void	rewind_stack(t_stack **a, int size_a, t_stack **b, int size_b);
+void	sort_a_len_4(t_stack **a, t_stack **b);
+void	sort_a(t_stack **a, t_stack **b, int size);
 void	classify_a_with_pivot(t_stack **a, t_stack **b, t_data *data, int size);
 void	sort_a_to_b(t_stack **a, t_stack **b, int size);
-void	quick_sort(t_stack **a, t_stack **b);
 
-/* quick_sort_2.c */
+/* quick_sort_b_to_a.c */
+void	sort_b(t_stack **a, t_stack **b, int size);
 void	classify_b_with_pivot(t_stack **a, t_stack **b, t_data *data, int size);
 void	sort_b_to_a(t_stack **a, t_stack **b, int size);
-
 
 /* node_utils.c */
 t_stack	*create_new_node(int data);
@@ -73,6 +74,7 @@ int		stack_is_ascending_order(t_stack *head, int size);
 int		stack_is_descending_order(t_stack *head, int size);
 int		find_min_data(t_stack *head, int size);
 int		find_max_data(t_stack *head, int size);
+void	reverse_stack_a(t_stack **a, t_stack **b, int size);
 
 /* utils.c */
 void	std_err(void);
