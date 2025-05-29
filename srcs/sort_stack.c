@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 00:25:01 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 16:36:06 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 20:06:09 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,14 @@ void	sort_stack(t_stack **a, t_stack **b)
 	int	size;
 
 	size = get_stack_size(*a);
-	if (size > 1 && stack_is_descending_order(*a, size))
+	if (size == 1)
+		return ;
+	if (stack_is_descending_order(*a, size))
+	{
 		reverse_stack_a(a, b, size);
-	else if (size > 1 && !stack_is_ascending_order(*a, size))
+		return ;
+	}
+	if (!stack_is_ascending_order(*a, size))
 	{
 		if (size == 3)
 			sort_3(a, b);

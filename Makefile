@@ -6,7 +6,7 @@
 #    By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 03:46:20 by ahwang            #+#    #+#              #
-#    Updated: 2025/05/29 04:22:33 by ahwang           ###   ########.fr        #
+#    Updated: 2025/05/29 19:55:55 by ahwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ FILES =	main \
 	do_op \
 	sort_stack \
 	set_pivot \
-	quick_sort \
+	quick_sort_1 \
+	quick_sort_2 \
 	node_utils \
 	stack_utils \
 	sort_utils \

@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 03:49:55 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 08:30:48 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 19:23:37 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,6 @@ typedef struct s_data
 	int		s;
 	int		m;
 	int		l;
-	// int	small_pvt;
-	// int	big_pvt;
-	// int	small_pvt_idx;
-	// int	big_pvt_idx;
-	// int	cnt_op_ra;
-	// int	cnt_op_rb;
-	// int	cnt_op_pa;
-	// int	cnt_op_pb;
 }	t_data;
 
 #endif

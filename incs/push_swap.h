@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 03:49:16 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 15:31:26 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 20:01:20 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,16 @@ void	set_pivot_idx(t_data *data, int size);
 void	set_pivot_value(t_data *data, int size, int *arr);
 int	set_pivot(t_stack *stack, t_data *data, int size);
 
-/* quick_sort.c */
-void	rewind_a(t_stack **a, t_stack **b, int size);
-void	rewind_b(t_stack **a, t_stack **b, int size);
-void	classify_b_with_pivot(t_stack **a, t_stack **b, t_data *data, int size);
-void	sort_b_to_a(t_stack **a, t_stack **b, int size);
+/* quick_sort_1.c */
+void	rewind_stack(t_stack **a, int size_a, t_stack **b, int size_b);
 void	classify_a_with_pivot(t_stack **a, t_stack **b, t_data *data, int size);
 void	sort_a_to_b(t_stack **a, t_stack **b, int size);
 void	quick_sort(t_stack **a, t_stack **b);
+
+/* quick_sort_2.c */
+void	classify_b_with_pivot(t_stack **a, t_stack **b, t_data *data, int size);
+void	sort_b_to_a(t_stack **a, t_stack **b, int size);
+
 
 /* node_utils.c */
 t_stack	*create_new_node(int data);
