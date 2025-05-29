@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 01:04:00 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/28 03:04:17 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 06:44:40 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ int	do_op_p(t_stack **head, t_stack *new_first_node)
 
 int	do_op_r(t_stack **head)
 {
-	(*head) = (*head)->next;
+	*head = (*head)->next;
 	return (1);
 }
 
 int	do_op_rr(t_stack **head)
 {
-	(*head) = (*head)->prev;
+	*head = (*head)->prev;
 	return (1);
 }
 

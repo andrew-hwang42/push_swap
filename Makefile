@@ -6,7 +6,7 @@
 #    By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/27 03:46:20 by ahwang            #+#    #+#              #
-#    Updated: 2025/05/28 02:26:49 by ahwang           ###   ########.fr        #
+#    Updated: 2025/05/29 04:22:33 by ahwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ FILES =	main \
 	check_valid_input \
 	do_op \
 	sort_stack \
+	set_pivot \
+	quick_sort \
 	node_utils \
 	stack_utils \
 	sort_utils \

@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 04:29:29 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/28 01:15:32 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 05:05:20 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 void	std_err(void)
 {
+	ft_printf("Error\n");
+	exit(1);
+}
+
+void	std_err_free_stack(t_stack **a, t_stack **b)
+{
+	free_stack(a);
+	free_stack(b);
 	ft_printf("Error\n");
 	exit(1);
 }

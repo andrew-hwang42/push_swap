@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 23:44:57 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/28 02:39:25 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 08:15:57 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ t_stack	*detach_first_node(t_stack **head)
 {
 	t_stack	*first_node;
 
+	if (*head == NULL)
+		return (NULL);
 	first_node = *head;
-	if ((*head)->next == *head && (*head)->prev == *head)
+	if ((*head)->next == *head)
 		*head = NULL;
 	else
 	{

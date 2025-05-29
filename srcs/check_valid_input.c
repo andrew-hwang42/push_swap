@@ -6,49 +6,34 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 04:52:15 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/28 03:04:09 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/29 14:56:52 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-int	is_smaller_than_min_int(char *str)
+int	is_int_range(char *str)
 {
-	int	i;
+	int	sign;
+	long	nbr;
 
-	i = 0;
-	if (str[i] != '-')
-		return (0);
-	if (ft_strlen(str) < ft_strlen("-2147483648"))
-		return (0);
-	if (ft_strlen(str) == ft_strlen("-2147483648"))
+	sign = 1;
+	if (*str == '-')
 	{
-		if (str[1] <= '2' && str[2] <= '1' && str[3] <= '4'
-			&& str[4] <= '7' && str[5] <= '4' && str[6] <= '8'
-			&& str[7] <= '3' && str[8] <= '6' && str[9] <= '4'
-			&& str[10] <= '8')
-			return (0);
+		sign = -1;
+		str++;
 	}
-	return (1);
-}
-
-int	is_bigger_than_max_int(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-')
-		return (0);
-	if (ft_strlen(str) < ft_strlen("2147483647"))
-		return (0);
-	if (ft_strlen(str) == ft_strlen("2147483647"))
+	nbr = 0;
+	while (*str)
 	{
-		if (str[0] <= '2' && str[1] <= '1' && str[2] <= '4'
-			&& str[3] <= '7' && str[4] <= '4' && str[5] <= '8'
-			&& str[6] <= '3' && str[7] <= '6' && str[8] <= '4'
-			&& str[9] <= '7')
-			return (0);
+		if ('0' <= *str && *str <= '9')
+			nbr = nbr * 10 + (*str - '0');
+		else
+			std_err();
+		str++;
 	}
+	if (sign * nbr < -2147483648 || sign * nbr > 2147483647)
+		std_err();
 	return (1);
 }
 
@@ -65,8 +50,7 @@ int	is_int_str(char *str)
 			std_err();
 		i++;
 	}
-	if (is_smaller_than_min_int(str)
-		|| is_bigger_than_max_int(str))
+	if (!is_int_range(str))
 		std_err();
 	return (1);
 }
