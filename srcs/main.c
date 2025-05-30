@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 03:55:34 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/30 03:20:55 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/30 03:27:06 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-	if (argc == 2)
+	if (argc == 1)
 		return (0);
 	argv++;
 	if (!check_valid_input(argv))

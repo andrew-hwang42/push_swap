@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 00:48:51 by ahwang            #+#    #+#             */
-/*   Updated: 2025/05/29 08:18:59 by ahwang           ###   ########.fr       */
+/*   Updated: 2025/05/30 03:30:22 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	get_stack_size(t_stack *head)
 
 	if (head == NULL)
 		return (0);
+	if (head->data == head->next->data)
+		return (1);
 	first_data = head->data;
 	size = 1;
 	while (1)
